@@ -20,10 +20,7 @@ def parallel_processing(n, m, data):
 def main():
     
     n, m = map(int, input().split())
-        
     data = list(map(int, input().split()))
-        
-    for i in range(m):
 
     result = parallel_processing(n, m, data)
     
