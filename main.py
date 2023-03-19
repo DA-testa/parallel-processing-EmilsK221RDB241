@@ -1,31 +1,46 @@
 # python3
 
 def parallel_processing(n, m, data):
+    
+    
     output = []
-    # TODO: write the function for simulating parallel tasks, 
-    # create the output pairs
-
+    tnumber = [0] * n
+    
+    for i in range (m):
+        thread = 0
+        for x in range (1, n):
+            if tnumber[x]<tnumber[thread]
+            thread = x
+            start = tnumber[thread]
+            end = start + data[i]
+    
     return output
 
 def main():
-    # TODO: create input from keyboard
-    # input consists of two lines
-    # first line - n and m
-    # n - thread count 
-    # m - job count
-    n = 0
-    m = 0
-
-    # second line - data 
-    # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
-    data = []
-
-    # TODO: create the function
-    result = parallel_processing(n,m,data)
     
-    # TODO: print out the results, each pair in it's own line
+    
+    n, m = map(int, input().split())
+    
+    if not (1 <= n <= 10**5):
+        raise ValueError("n is not between 1 and 10^5")
+        
+    if not (1 <= m <= 10**5):
+        raise ValueError("m is not between 1 and 10^5")
+        
+    data = list(map(int, input().split()))
+    
+    if len(data) != m:
+        raise ValueError("data is not equal to m")
+        
+    for i in range(m):
+        
+        if not (0 <= data[i] <= 10**9):
+            raise ValueError("all/some elements in data are not between 0 and 10^9")
 
-
+    result = parallel_processing(n, m, data)
+    
+    for pair in result:
+        print(pair[0], pair[1])
 
 if __name__ == "__main__":
     main()
