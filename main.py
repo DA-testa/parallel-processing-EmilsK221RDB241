@@ -9,7 +9,7 @@ def parallel_processing(n, m, data):
     for i in range (m):
         thread = 0
         for x in range (1, n):
-            if tnumber[x]<tnumber[thread]
+            if tnumber[x]<tnumber[thread]:
             thread = x
             start = tnumber[thread]
             end = start + data[i]
