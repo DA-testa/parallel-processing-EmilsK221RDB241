@@ -2,22 +2,22 @@
 
 def parallel_processing(n, m, data):
     
-    
     output = []
     tnumber = [0] * n
     
-    for i in range (m):
+    for i in range(m):
         thread = 0
-        for x in range (1, n):
-            if tnumber[x]<tnumber[thread]:
-            thread = x
-            start = tnumber[thread]
-            end = start + data[i]
+        for x in range(1, n):
+            if tnumber[x] < tnumber[thread]:
+                thread = x
+        start = tnumber[thread]
+        end = start + data[i]
+        output.append((thread, start))
+        tnumber[thread] = end
     
     return output
 
 def main():
-    
     
     n, m = map(int, input().split())
     
@@ -33,7 +33,6 @@ def main():
         raise ValueError("data is not equal to m")
         
     for i in range(m):
-        
         if not (0 <= data[i] <= 10**9):
             raise ValueError("all/some elements in data are not between 0 and 10^9")
 
